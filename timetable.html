@@ -28,19 +28,16 @@
         }
 
         .card {
-          margin-top: 20px; /* Adjust to ensure alignment with the logo */
-          margin-left: 310px;
-          margin-right: auto;
-          padding: 10px; /* Adjust padding as needed */
-          border: 1px solid #ddd; /* Optional, for visual separation */
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
         }
 
         .card-img-top {
-          object-fit: cover; /* Ensures the image covers the entire area without stretching */
-          max-height: 100px; /* Adjust this value to fit your design */
-          width: 80%;
-          margin: auto 0;
-          padding: 20px;
+          object-fit: cover;
+          max-height: 200px;
+          width: 100%;
         }
 
         .card-title {
@@ -52,9 +49,10 @@
         }
 
         .card-body {
-          font-family: 'Times New Roman', Times, serif;
-          font-size: 15px
-          text-align: justify;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          flex-grow: 1;
         }
     </style>
 </head>
@@ -76,13 +74,40 @@
       </div>
     </div>
   </header>
-    <div class="card" style="width: 18rem;">
-      <img src="Hospital images/Changi General Hospital.png" class="card-img-top img-fluid" alt="Changi General Hospital">
-        <div class="card-body">
-      <h5 class="card-title">Changi General Hospital</h5>
-      <p class="card-text">Changi General Hospital is a 1000-bed hospital located in Simei, eastern Singapore. It is Singapore's first purpose-built general hospital to serve communities in the east and north-east regions.</p>
-      <a href="#" class="btn btn-primary">Shuttle Timetable</a>
+
+  <div class="container">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100" >
+            <img src="Hospital images/Changi General Hospital.png" class="card-img-top img-fluid" alt="Changi General Hospital">
+              <div class="card-body">
+              <h5 class="card-title">Changi General Hospital</h5>
+              <p class="card-text">Changi General Hospital is a 1000-bed hospital located in Simei, eastern Singapore. It is Singapore's first purpose-built general hospital to serve communities in the east and north-east regions.</p>
+              <a href="#" class="btn btn-primary">Shuttle Timetable</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <img src="Hospital images/Gleneagles Hospital.png" class="card-img-top img-fluid" alt="Gleneagles Hospital">
+            <div class="card-body">
+                <h5 class="card-title">Gleneagles Hospital</h5>
+                <p class="card-text">Gleneagles Hospital is a private hospital on Napier Road, Singapore, next to Napier MRT station. It provides medical and surgical services. It is part of Parkway Pantai, a subsidiary of the Malaysian–Singaporean private healthcare group IHH Healthcare.</p>
+                <a href="#" class="btn btn-primary">Shuttle Timetable</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+          <img src="Hospital images/Khoo Teck Puat Hospital.png" class="card-img-top" alt="Khoo Teck Puat Hospital">
+          <div class="card-body">
+              <h5 class="card-title">Khoo Teck Puat Hospital</h5>
+              <p class="card-text">Khoo Teck Puat Hospital is a 795-bed general and acute care hospital located at Yishun in Singapore. The hospital is part of an integrated development together with the adjoining Yishun Community Hospital.</p>
+              <a href="#" class="btn btn-primary">Shuttle Timetable</a>
+          </div>
+      </div>
     </div>
   </div>
+</div>
 </body>
 </html>
