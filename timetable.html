@@ -22,8 +22,39 @@
     <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap" rel="stylesheet">
     <style>
         .title {
-    font-family: "News Cycle", sans-serif; 
-    font-size: 25px;
+          font-family: "News Cycle", sans-serif; 
+          font-size: 25px;
+          margin-left: 10px;
+        }
+
+        .card {
+          margin-top: 20px; /* Adjust to ensure alignment with the logo */
+          margin-left: 310px;
+          margin-right: auto;
+          padding: 10px; /* Adjust padding as needed */
+          border: 1px solid #ddd; /* Optional, for visual separation */
+        }
+
+        .card-img-top {
+          object-fit: cover; /* Ensures the image covers the entire area without stretching */
+          max-height: 100px; /* Adjust this value to fit your design */
+          width: 80%;
+          margin: auto 0;
+          padding: 20px;
+        }
+
+        .card-title {
+          font-family: "Roboto", sans-serif;
+          font-size: 20px;
+          font-style: bold;
+          text-align: left;
+          text-decoration: underline;
+        }
+
+        .card-body {
+          font-family: 'Times New Roman', Times, serif;
+          font-size: 15px
+          text-align: justify;
         }
     </style>
 </head>
@@ -42,73 +73,16 @@
             <li class="nav-item"><button class="btn btn-link nav-link" id="aboutBtn"><a href="/about.html">About</a></button></li> <!-- This is a button named: About-->
           </ul>
         </header>
-
       </div>
     </div>
   </header>
-
-  <div class="dropdown-menu d-block position-static pt-0 mx-0 rounded-3 shadow overflow-hidden w-280px" data-bs-theme="light">
-    <form class="p-2 mb-2 bg-body-tertiary border-bottom">
-      <input type="search" class="form-control" autocomplete="false" placeholder="Type to filter...">
-    </form>
-    <ul class="list-unstyled mb-0">
-      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
-        <span class="d-inline-block bg-success rounded-circle p-1"></span>
-        Alexandra Hospital
-      </a></li>
-      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
-        <span class="d-inline-block bg-primary rounded-circle p-1"></span>
-        Changi General Hospital
-      </a></li>
-      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
-        <span class="d-inline-block bg-danger rounded-circle p-1"></span>
-        Gleneagles Hospital
-      </a></li>
-      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
-        <span class="d-inline-block bg-info rounded-circle p-1"></span>
-        Khoo Teck Puat Hospital
-      </a></li>
-      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
-        <span class="d-inline-block bg-warning rounded-circle p-1"></span>
-        KK Women's and Children's Hospital
-      </a></li>
-      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
-        <span class="d-inline-block bg-info rounded-circle p-1"></span>
-        Mount Alvernia Hospital
-      </a></li>
-      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
-        <span class="d-inline-block bg-success rounded-circle p-1"></span>
-        Mount Elizaberth Hospital
-      </a></li>
-      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
-        <span class="d-inline-block bg-success rounded-circle p-1"></span>
-        National University Hospital
-      </a></li>
-      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
-        <span class="d-inline-block bg-success rounded-circle p-1"></span>
-        Ng Teng Fong Hospital
-      </a></li>
-      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
-        <span class="d-inline-block bg-success rounded-circle p-1"></span>
-        Parkway East Hospital
-      </a></li>
-      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
-        <span class="d-inline-block bg-success rounded-circle p-1"></span>
-        Raffles Hospital
-      </a></li>
-      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
-        <span class="d-inline-block bg-success rounded-circle p-1"></span>
-        Sengkang Hospital
-      </a></li>
-      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
-        <span class="d-inline-block bg-success rounded-circle p-1"></span>
-        Singapore General Hospital
-      </a></li>
-      <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
-        <span class="d-inline-block bg-success rounded-circle p-1"></span>
-        Tan Tock Seng Hospital
-      </a></li>
-    </ul>
+    <div class="card" style="width: 18rem;">
+      <img src="Hospital images/Changi General Hospital.png" class="card-img-top img-fluid" alt="Changi General Hospital">
+        <div class="card-body">
+      <h5 class="card-title">Changi General Hospital</h5>
+      <p class="card-text">Changi General Hospital is a 1000-bed hospital located in Simei, eastern Singapore. It is Singapore's first purpose-built general hospital to serve communities in the east and north-east regions.</p>
+      <a href="#" class="btn btn-primary">Shuttle Timetable</a>
+    </div>
   </div>
 </body>
 </html>
