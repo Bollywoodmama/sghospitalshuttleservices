@@ -24,11 +24,26 @@
 
     <style>
 
-      .container {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
+        .container {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+          position: relative;
+        }
+
+        .background-image {
+          position: absolute;
+          top: 100px;
+          left: 10px;
+          width: 100%;
+          height: 100%;
+          background-image: url('Images/Cover.png');
+          background-size: cover;
+          background-position: center;
+          opacity: 0.5;
+          z-index: -1;
+        }
+
         .title {
           font-family: "News Cycle", sans-serif; 
           font-size: 25px;
@@ -38,6 +53,8 @@
 
         header {
           flex-shrink: 0;
+          z-index: 1;
+          background-color: white;
         }
 
         main {
@@ -47,11 +64,8 @@
           align-items: center;
           text-align: center;
           flex-direction: column;
-          background-image: url('Images/Cover.png');
-          background-color: rgba(255, 255, 255, 0.5); /* Change alpha value */
-          background-blend-mode: lighten; /*Adjust blend mode */
-          background-size: cover;
-          background-position: center;
+          position: relative; /* Ensure this content is above the background image */
+          z-index: 1; /* Ensure this content is above the background image */
           padding: 50px;
         }
 
@@ -85,6 +99,8 @@
             <li class="nav-item"><a href="/about.html" class="btn btn-link nav-link" id="aboutBtn">About</a></li> <!-- This is a button named: About-->
           </ul>
         </header>
+
+        <div class="background-image"></div>
 
         <!-- Cover Section -->
         <main class="px-3 text-center">
