@@ -40,7 +40,7 @@
         background-image: url('Images/Cover.png'); /* Make sure this path is correct */
         background-size: cover;
         background-position: center;
-        opacity: 0.5; /* Adjust the opacity as needed */
+        opacity: 0.3; /* Adjust the opacity as needed */
         z-index: -1; /* Ensure the background image stays behind other content */
       }
 
@@ -72,6 +72,32 @@
           color: black;
         }
 
+        h1 {
+          font-family: "Roboto Slab", sans-serif;
+          font-size: 50px;
+          margin-bottom: 30px; /* create space between h1 and h2 */
+        }
+
+        h2 {
+          font-family: "Roboto Slab", sans-serif;
+          font-size: 25px;
+          align-self: flex-start; /* Align h2 to the left within the flex container. */
+          text-align: left; /* Ensure that the text inside h2 is algined to the left. */
+          text-decoration: underline;
+          margin-top: 60px;
+        }
+
+        ul {
+          padding-left: 0;
+          margin-left: 0;
+          list-style: circle;
+        }
+
+        li {
+          text-align: left;
+          margin-left: -180px;
+        }
+
     </style>
 </head>
 <body>
@@ -93,8 +119,14 @@
         <main>
           <h1>Problem Statement:</h1>
           <p>
-          <em>General Public who require shuttle bus services and timings when they intend to visit a hospital. This results in time wasted when they need to determine the availability of shuttle services and timings to the hospital.</em>
+          <em>"General Public who require shuttle bus services and timings when they intend to visit a hospital. This results in time wasted when they need to determine the availability of shuttle services and timings to the hospital."</em>
           </p>
+          
+          <h2>Pain Points</h2>
+          <ul>
+            <li>Inaccurate shuttle timings that resulted in missed appointments</li>
+            <li>Insufficient infrastructure coupled with hospitals' terrain (located on hills) resulted in restless patients/visitors. </li>
+          </ul>
         </main>
       </div>
   </header>
