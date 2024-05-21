@@ -88,7 +88,7 @@
     </div>
   </header>
 
-  <div class="container">
+  <div class="container"> <!-- This is the tracking of shuttle buses for individual hospitals, for users to input their phone numbers.-->
     <div class="row">
         <div class="col-md-4 mb-4">
           <div class="card h-100" >
@@ -96,8 +96,17 @@
               <div class="card-body">
               <h5 class="card-title">Changi General Hospital</h5>
               <p class="card-text">Changi General Hospital is a 1000-bed hospital located in Simei, eastern Singapore. It is Singapore's first purpose-built general hospital to serve communities in the east and north-east regions.</p>
-              <a href="#" class="btn btn-primary">Shuttle Timetable</a>
-          </div>
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#changiCollapse" aria-expanded="false" aria-controls="changiCollapse">Shuttle Timetable</button>
+              <div class="collapse" id="changiCollapse">
+                <form id="changiForm" class="mt-3">
+                  <div class="mb-3">
+                    <label for="changiPhone" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="changiPhone" placeholder="Enter phone number" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Send SMS</button>
+                </form>
+              </div>
+            </div>
         </div>
       </div>
       <div class="col-md-4 mb-4">
@@ -108,120 +117,73 @@
                 <p class="card-text">Gleneagles Hospital is a private hospital on Napier Road, Singapore, next to Napier MRT station. It provides medical and surgical services. It is part of Parkway Pantai, a subsidiary of the Malaysian–Singaporean private healthcare group IHH Healthcare.</p>
                 <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#gleneaglesCollapse" aria-expanded="false" aria-controls="gleneaglesCollapse">Shuttle Timetable</button>
                 <div class="collapse" id="gleneaglesCollapse">
-                  <div class="timetable-container"> <!-- This is to insert the shuttle timetable for Gleneagles Hospital under the collapse component-->
-                    <!-- <div class="acc-panel accordion-panel-active"><p>Mondays to Fridays (Excluding Public Holidays):</p><p><strong>Gleneagles Hospital - Mount Elizabeth Hospital - The Heeren</strong></p><div class="table-responsive"><table width="100%" style="">
-                      <tbody>
-                        <tr style="">
-                          <th><strong>Gleneagles Hospital</strong></th>
-                          <th><strong>Mount Elizabeth Hospital</strong></th>
-                          <th><strong>The Heeren</strong></th>
-                        </tr>
-                        <tr style=""><td>8.30am</td>
-                          <td style="">8.45am</td>
-                          <td>8.50am</td>
-                        </tr><tr style="">
-                          <td>9.10am</td>
-                          <td>9.25am</td>
-                          <td>9.30am</td>
-                        </tr><tr style="">
-                            <td>9.50am</td>
-                            <td>10.05am</td>
-                            <td>10.10am</td>
-                        </tr><tr style=""><td>10.30am</td>
-                            <td>10.45am</td>
-                            <td>10.50am</td>
-                        </tr><tr>
-                          <td><strong>Break</strong></td>
-                          <td><strong>Break</strong></td>
-                          <td><strong>Break</strong></td>
-                        </tr><tr style="">
-                          <td>12.10pm</td>
-                          <td>12.25pm</td>
-                          <td>12.30pm</td>
-                        </tr><tr style="">
-                          <td>12.50pm</td>
-                          <td>1.05pm</td>
-                          <td>1.10pm</td></tr>
-                        <tr style="">
-                          <td>1.30pm</td>
-                          <td>1.45pm</td>
-                          <td>1.50pm</td>
-                        </tr><tr>
-                          <td><strong>Break</strong></td>
-                          <td><strong>Break</strong></td>
-                          <td><strong>Break</strong></td>
-                        </tr><tr style="">
-                          <td>3.10pm</td>
-                          <td>3.25pm</td>
-                          <td>3.30pm</td>
-                        </tr><tr style="">
-                          <td>3.50pm</td>
-                          <td>4.05pm</td>
-                          <td>4.10pm</td>
-                        </tr><tr>
-                          <td>4.30pm</td>
-                          <td>4.45pm</td>
-                          <td>4.50pm</td>
-                        </tr><tr>
-                          <td>5.10pm</td>
-                          <td colspan="2" style="text-align:center;"><strong>End of Service</strong></td>
-                        </tr></tbody></table>
-                      </div>
-                      <p>Saturdays (Excluding Public Holidays):</p><p><strong>Gleneagles Hospital - Mount Elizabeth Hospital - The Heeren - Mount Elizabeth Novena</strong></p>
-                      <div class="table-responsive"><table width="100%">
-                        <tbody>
-                          <tr>
-                            <th>Gleneagles Hospital</th>
-                            <th>Mount Elizabeth Hospital</th>
-                            <th data-role="resizable">The Heeren</th>
-                            <th>Mount Elizabeth Novena Hospital</th>
-                          </tr><tr>
-                            <td>8.30am</td>
-                            <td>8.50am</td>
-                            <td>8.55am</td>
-                            <td>9.15am</td>
-                          </tr><tr>
-                            <td>9.35am</td>
-                            <td>9.55am</td>
-                            <td>10.00am</td>
-                            <td>10.20am</td>
-                          </tr><tr>
-                            <td><strong>Break</strong></td>
-                            <td><strong>Break</strong></td>
-                            <td><strong>Break</strong></td>
-                            <td><strong>Break</strong></td>
-                          </tr><tr>
-                            <td>11.10am</td>
-                            <td>11.30am</td>
-                            <td>11.35am</td>
-                            <td>11.55am</td>
-                          </tr><tr><td>12.15pm</td>
-                            <td>12.35pm</td>
-                            <td>12.40pm</td>
-                            <td>1.00pm</td>
-                          </tr><tr><td colspan="4" style="text-align:center;"><strong>End of Service</strong></td>
-                          </tr>
-                        </tbody>
-                      </table> -->
+                  <form id="gleneaglesForm" class="mt-3">
+                    <div class="mb-3">
+                      <label for="gleneaglesPhone" class="form-label">Phone Number</label>
+                      <input type="text" class="form-control" id="gleneaglesPhone" placeholder="Enter phone number" required>
                     </div>
-                  </div>
-                    </div>
-                  </div>
+                    <button type="submit" class="btn btn-primary">Send SMS</button>
+                  </form>
                 </div>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
+      </div>
     <div class="col-md-4 mb-4">
       <div class="card h-100">
           <img src="Images/Khoo Teck Puat Hospital.png" class="card-img-top" alt="Khoo Teck Puat Hospital">
           <div class="card-body">
               <h5 class="card-title">Khoo Teck Puat Hospital</h5>
               <p class="card-text">Khoo Teck Puat Hospital is a 795-bed general and acute care hospital located at Yishun in Singapore. The hospital is part of an integrated development together with the adjoining Yishun Community Hospital.</p>
-              <a href="#" class="btn btn-primary">Shuttle Timetable</a>
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#khooCollapse" aria-expanded="false" aria-controls="khooCollapse">Shuttle Timetable</button>
+              <div class="collapse" id="khooCollapse">
+                <form id="khooForm" class="mt-3">
+                    <div class="mb-3">
+                        <label for="khooPhone" class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" id="khooPhone" placeholder="Enter phone number" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send SMS</button>
+                </form>
+              </div>
+            </div>
           </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- This is to handle the submission via the website and sending a POST request to server.-->
+    <script>
+    function sendSMS(formId, phoneId, messageId) {
+        const phone = $(phoneId).val();
+        const message = $(messageId).val();
+
+        $.ajax({
+            url: '/send-sms',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ phone, message }),
+            success: function(response) {
+                alert('SMS sent successfully!');
+            },
+            error: function(error) {
+                alert('Error sending SMS');
+            }
+        });
+    }
+
+    $('#changiForm').on('submit', function(e) {
+        e.preventDefault();
+        sendSMS('#changiForm', '#changiPhone', '#changiMessage');
+    });
+
+    $('#gleneaglesForm').on('submit', function(e) {
+        e.preventDefault();
+        sendSMS('#gleneaglesForm', '#gleneaglesPhone', '#gleneaglesMessage');
+    });
+
+    $('#khooForm').on('submit', function(e) {
+        e.preventDefault();
+        sendSMS('#khooForm', '#khooPhone', '#khooMessage');
+    });
+</script>
 </body>
 </html>
