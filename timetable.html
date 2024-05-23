@@ -15,9 +15,22 @@
 
     <!--Google API-->
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5E2Q21VX98"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5E2Q21VX98');
+    </script>
     
-    <!--customised Javascript-->
-    <script src="script.js"></script>
+    <!--Server Javascript-->
+    <script src="server.js"></script>
+
+    <!--Twilio Javascript SDK-->
+    <script src="https://sdk.twilio.com/js/client/v1.12/twilio.min.js"></script>
 
     <!--Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -149,41 +162,31 @@
           </div>
         </div>
       </div>
+    
+   <!--  <script>
+    document.getElementById('smsForm').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- This is to handle the submission via the website and sending a POST request to server.-->
-    <script>
-    function sendSMS(formId, phoneId, messageId) {
-        const phone = $(phoneId).val();
-        const message = $(messageId).val();
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const message = document.getElementById('message').value;
 
-        $.ajax({
-            url: '/send-sms',
-            type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify({ phone, message }),
-            success: function(response) {
-                alert('SMS sent successfully!');
-            },
-            error: function(error) {
+            fetch('/send-sms', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ phoneNumber, message })
+            }).then((response) => {
+                if (response.ok) {
+                    alert('SMS sent successfully!');
+                } else {
+                    alert('Error sending SMS');
+                }
+            }).catch((error) => {
+                console.error(error);
                 alert('Error sending SMS');
-            }
+            });
         });
-    }
-
-    $('#changiForm').on('submit', function(e) {
-        e.preventDefault();
-        sendSMS('#changiForm', '#changiPhone', '#changiMessage');
-    });
-
-    $('#gleneaglesForm').on('submit', function(e) {
-        e.preventDefault();
-        sendSMS('#gleneaglesForm', '#gleneaglesPhone', '#gleneaglesMessage');
-    });
-
-    $('#khooForm').on('submit', function(e) {
-        e.preventDefault();
-        sendSMS('#khooForm', '#khooPhone', '#khooMessage');
-    });
-</script>
+    </script>-->
 </body>
 </html>
