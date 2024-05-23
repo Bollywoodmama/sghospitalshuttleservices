@@ -10,10 +10,10 @@ const client = twilio(process.env.ACCOUNT_SID,process.env.TWILIO_AUTH_TOKEN);
 app.use(bodyParser.json());
 
 app.post('/send-sms', (req, res) => {
-    const { phoneNumber, message } = req.body;
+    const { phoneNumber } = req.body;
 
     client.messages.create({
-        body: message,
+        body: "The shuttle bus is arriving in 5 mins.",
         to: phoneNumber,
         from: '+12166779814'
     }).then(() => {
