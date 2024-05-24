@@ -6,8 +6,6 @@ require('dotenv').config()
 const app = express();
 const client = twilio(process.env.ACCOUNT_SID,process.env.TWILIO_AUTH_TOKEN);
 
-
-
 //app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -19,7 +17,7 @@ app.post('/send-sms', (req, res) => {
 
     client.messages.create({
         body: 'The shuttle bus is arriving in ' + minutes.toString() + ' mins.',
-        to: "+65"+{phoneNumber},
+        to: "+65"+ phoneNumber,
         from: '+12166779814',
     }).then(() => {
         res.send('SMS sent successfully!');
