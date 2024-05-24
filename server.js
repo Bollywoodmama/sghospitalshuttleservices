@@ -5,9 +5,11 @@ require('dotenv').config()
 
 const app = express();
 const client = twilio(process.env.ACCOUNT_SID,process.env.TWILIO_AUTH_TOKEN);
+const phoneNumber = req.body.mobile;
 
 
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.post('/send-sms', (req, res) => {
     const { phoneNumber } = req.body;
@@ -16,8 +18,8 @@ app.post('/send-sms', (req, res) => {
     const minutes = Math.floor(Math.random() * 60) + 1;
 
     client.messages.create({
-        body: 'The shuttle bus is arriving in' + minutes.toString() + ' mins.',
-        to: '+6590886428',
+        body: 'The shuttle bus is arriving in ' + minutes.toString() + ' mins.',
+        to: 'phoneNumber',
         from: '+12166779814',
     }).then(() => {
         res.send('SMS sent successfully!');
