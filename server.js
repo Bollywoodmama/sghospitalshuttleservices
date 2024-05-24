@@ -17,8 +17,8 @@ app.post('/send-sms', (req, res) => {
 
     client.messages.create({
         body: "The shuttle bus is arriving in ${minutes} mins.",
-        to: +6590886428,
-        from: '+12166779814'
+        to: '+6590886428',
+        from: '+12166779814',
     }).then(() => {
         res.send('SMS sent successfully!');
     }).catch((err) => {
@@ -30,4 +30,3 @@ app.post('/send-sms', (req, res) => {
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
-
