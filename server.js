@@ -16,7 +16,7 @@ app.post('/send-sms', (req, res) => {
     const minutes = Math.floor(Math.random() * 60) + 1;
 
     client.messages.create({
-        body: "The shuttle bus is arriving in " + {minutes} + " mins.",
+        body: 'The shuttle bus is arriving in' + minutes.toString() + ' mins.',
         to: '+6590886428',
         from: '+12166779814',
     }).then(() => {
