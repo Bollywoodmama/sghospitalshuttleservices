@@ -12,8 +12,11 @@ app.use(bodyParser.json());
 app.post('/send-sms', (req, res) => {
     const { phoneNumber } = req.body;
 
+    // Generate a random number between 1 and 60
+    const minutes = Math.floor(Math.random() * 60) + 1;
+
     client.messages.create({
-        body: "The shuttle bus is arriving in 5 mins.",
+        body: "The shuttle bus is arriving in ${minutes} mins.",
         to: phoneNumber,
         from: '+12166779814'
     }).then(() => {
