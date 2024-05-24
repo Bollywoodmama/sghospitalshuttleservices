@@ -5,14 +5,14 @@ require('dotenv').config()
 
 const app = express();
 const client = twilio(process.env.ACCOUNT_SID,process.env.TWILIO_AUTH_TOKEN);
-const phoneNumber = req.body.mobile;
+
 
 
 //app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.post('/send-sms', (req, res) => {
-    const { phoneNumber } = req.body;
+    const phoneNumber = req.body.mobile;
 
     // Generate a random number between 1 and 60
     const minutes = Math.floor(Math.random() * 60) + 1;
