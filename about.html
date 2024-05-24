@@ -93,19 +93,40 @@
           font-size: 25px;
           align-self: flex-start; /* Align h2 to the left within the flex container. */
           text-align: left; /* Ensure that the text inside h2 is algined to the left. */
-          text-decoration: underline;
           margin-top: 60px;
         }
 
         ul {
           padding-left: 0;
           margin-left: 0;
-          list-style: circle;
+          list-style-type: none;
         }
 
-        li {
-          text-align: left;
+        ul li {
+          text-decoration: underline;
+          display: inline-block; /*Display list items in a line */
+          align-items: flex-start;
           margin-left: -180px;
+        }
+
+        /* Align "Inaccurate shuttle timings..." with Interviewee #1 */
+        .interviewee {
+            text-decoration: underline;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px; /* Add some space below each interviewee */
+            padding: 20px;
+            text-align: left;
+        }
+        .interviewee em {
+            margin-left: 10px; /* Add space between interviewee name and description */
+        }
+
+        .painpoints {
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         footer {
@@ -148,10 +169,20 @@
           
           <h2>Pain Points</h2>
           <ul>
-            <li>Inaccurate shuttle timings that resulted in missed appointments</li>
-            <li>Insufficient infrastructure coupled with hospitals' terrain (located on hills) resulted in restless patients/visitors. </li>
-          </ul>
+            <li class="interviewee">
+              Interviewee #1
+            </li>
+              <li class="painpoints"><em>"Inaccurate shuttle timings that resulted in missed appointments."</em>
+              </li>
+            <li class="interviewee">
+              Interviewee #2
+            </li>
+              <li class="painpoints"><em>"Insufficient infrastructure coupled with hospitals' terrain (located on hills) resulted in restless patients/visitors."</em>
+              </li>
+            </ul>
         </main>
+
+        <hr>
 
         <footer class="py-3 my-4">
           <p><em>This website is created for learning purposes only. The information provided here should not be considered professional advice. Please note that we make no guarantees regarding the accuracy, completeness, or reliability of the contents of this website. 

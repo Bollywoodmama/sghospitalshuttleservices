@@ -17,7 +17,7 @@ app.post('/send-sms', (req, res) => {
 
     client.messages.create({
         body: "The shuttle bus is arriving in ${minutes} mins.",
-        to: phoneNumber,
+        to: +6590886428,
         from: '+12166779814'
     }).then(() => {
         res.send('SMS sent successfully!');
