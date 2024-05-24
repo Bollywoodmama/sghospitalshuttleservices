@@ -117,10 +117,10 @@
               <p class="card-text">Changi General Hospital is a 1000-bed hospital located in Simei, eastern Singapore. It is Singapore's first purpose-built general hospital to serve communities in the east and north-east regions.</p>
               <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#changiCollapse" aria-expanded="false" aria-controls="changiCollapse">Shuttle Timetable</button>
               <div class="collapse" id="changiCollapse">
-                <form id="changiForm" class="mt-3">
+                <form id="smsFormChangi" class="mt-3">
                   <div class="mb-3">
-                    <label for="changiPhone" class="form-label">Phone Number</label>
-                    <input type="text" class="form-control" id="changiPhone" placeholder="Enter phone number" required>
+                    <label for="phoneNumberChangi" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="phoneNumberChangi" placeholder="Enter phone number" required>
                   </div>
                   <button type="submit" class="btn btn-primary">Send SMS</button>
                 </form>
@@ -136,10 +136,10 @@
                 <p class="card-text">Gleneagles Hospital is a private hospital on Napier Road, Singapore, next to Napier MRT station. It provides medical and surgical services. It is part of Parkway Pantai, a subsidiary of the Malaysian–Singaporean private healthcare group IHH Healthcare.</p>
                 <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#gleneaglesCollapse" aria-expanded="false" aria-controls="gleneaglesCollapse">Shuttle Timetable</button>
                 <div class="collapse" id="gleneaglesCollapse">
-                  <form id="gleneaglesForm" class="mt-3">
+                  <form id="smsFormGleneagles" class="mt-3">
                     <div class="mb-3">
-                      <label for="gleneaglesPhone" class="form-label">Phone Number</label>
-                      <input type="text" class="form-control" id="gleneaglesPhone" placeholder="Enter phone number" required>
+                      <label for="phoneNumberGleneagles" class="form-label">Phone Number</label>
+                      <input type="text" class="form-control" id="phoneNumberGleneagles" placeholder="Enter phone number" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Send SMS</button>
                   </form>
@@ -156,10 +156,10 @@
               <p class="card-text">Khoo Teck Puat Hospital is a 795-bed general and acute care hospital located at Yishun in Singapore. The hospital is part of an integrated development together with the adjoining Yishun Community Hospital.</p>
               <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#khooCollapse" aria-expanded="false" aria-controls="khooCollapse">Shuttle Timetable</button>
               <div class="collapse" id="khooCollapse">
-                <form id="khooForm" class="mt-3">
+                <form id="smsFormKhoo" class="mt-3">
                     <div class="mb-3">
-                        <label for="khooPhone" class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" id="khooPhone" placeholder="Enter phone number" required>
+                        <label for="phoneNumberKhoo" class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" id="phoneNumberKhoo" placeholder="Enter phone number" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Send SMS</button>
                 </form>
@@ -177,10 +177,11 @@
       </div>
     
    <script>
-    document.getElementById('smsForm').addEventListener('submit', function(event) {
+    function sendSms(formId, phoneInputId) {
+      document.getElementById(formId).addEventListener('submit', function(event) {
             event.preventDefault();
 
-            const phoneNumber = document.getElementById('phoneNumber').value;
+            const phoneNumber = document.getElementById(phoneInputId).value;
             const message = document.getElementById('message').value;
 
             fetch('/send-sms', {
@@ -200,6 +201,13 @@
                 alert('Error sending SMS');
             });
         });
+    }
+    // Call the function for each form
+    sendSms('smsFormChangi', 'phoneNumberChangi');
+    sendSms('smsFormGleneagles', 'phoneNumberGleneagles');
+    sendSms('smsFormKhoo', 'phoneNumberKhoo');
+
+
     </script>
 </body>
 </html>
