@@ -167,6 +167,34 @@
             </div>
           </div>
         </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+              <img src="Images/Mount Alvernia.png" class="card-img-top" alt="Mount Alvernia Hospital">
+              <div class="card-body">
+                  <h5 class="card-title">Mount Alvernia Hospital</h5>
+                  <p class="card-text">Mount Alvernia Hospital is the only not-for-profit general acute tertiary care private hospital in Singapore. With close to 380 beds, Alvernia is supported by more than 300 on-campus specialist doctors and nearly 1,400 accredited doctors.</p>
+                  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#MountAlverniaCollapse" aria-expanded="false" aria-controls="MountAlverniaCollapse">Shuttle Timetable</button>
+                  <div class="collapse" id="MountAlverniaCollapse">
+                    <form action="https://sghospitalshuttle.com/send-sms" onsubmit="onSubmit(event)" method="post">
+                      <label for="mobile">Shuttlebus from Caldecott MRT:</label><br>
+                      <input type="text" id="mobile" name="mobile" placeholder="Phone number"><br><br>
+                      <!-- <label for="message">Last name:</label><br><br> -->
+                      <!-- <input type="text" id="message" name="message"><br><br> -->
+                      <input type="submit" value="Send">
+                      </form>
+
+                      <!-- This is for 2nd location shuttlebus timetable under Mount Alvernia-->
+                      <form action="https://sghospitalshuttle.com/send-sms" onsubmit="onSubmit(event)" method="post">
+                        <label for="mobile">Shuttlebus from Bishan MRT:</label><br>
+                        <input type="text" id="mobile" name="mobile" placeholder="Phone number"><br><br>
+                        <!-- <label for="message">Last name:</label><br><br> -->
+                        <!-- <input type="text" id="message" name="message"><br><br> -->
+                        <input type="submit" value="Send">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
         
         <hr>
         
