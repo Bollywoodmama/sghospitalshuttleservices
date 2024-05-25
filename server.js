@@ -12,8 +12,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.post('/send-sms', (req, res) => {
     const phoneNumber = req.body.mobile;
 
-    // Generate a random number between 1 and 60
-    const minutes = Math.floor(Math.random() * 60) + 1;
+    // Generate a random number between 1 and 20
+    const minutes = Math.floor(Math.random() * 20) + 1;
 
     client.messages.create({
         body: 'The shuttle bus is arriving in ' + minutes.toString() + ' mins.',
